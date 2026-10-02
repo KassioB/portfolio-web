@@ -23,7 +23,7 @@ const services = [
 
 export function Services() {
   return (
-    <section id="services" className="py-24 relative">
+    <section id="services" className="py-24 relative scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-16" style={{ fontFamily: 'var(--font-heading)' }}>
           MEUS SERVIÇOS

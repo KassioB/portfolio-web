@@ -5,12 +5,12 @@ import { ArrowDown } from "lucide-react"
 
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+    <section className="relative isolate min-h-screen flex items-center pt-16 overflow-hidden">
       {/* Background Grid Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(100,100,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,200,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
+      <div className="pointer-events-none absolute inset-0 z-0 bg-[linear-gradient(rgba(100,100,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,200,0.03)_1px,transparent_1px)] bg-[size:60px_60px]" />
       
       {/* Floating Code Elements */}
-      <div className="absolute top-1/4 right-[10%] text-muted-foreground/20 font-mono text-sm hidden lg:block select-none">
+      <div className="absolute top-1/4 right-[10%] z-10 text-muted-foreground/20 font-mono text-sm hidden lg:block select-none">
         <div>{'<html>'}</div>
         <div className="ml-4">{'<TypeScript />'}</div>
         <div className="ml-4">{'Front-End'}</div>
@@ -19,7 +19,7 @@ export function Hero() {
         <div>{'</html>'}</div>
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content */}
           <div className="space-y-6 text-center lg:text-left">
@@ -29,7 +29,7 @@ export function Hero() {
               <span className="text-primary">FRONTEND</span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-md mx-auto lg:mx-0 leading-relaxed">
-              Eu sou o Kássio – um <span className="text-accent underline underline-offset-4">desenvolvedor web</span> apaixonado por criar sites bonitos e responsivos.
+              Eu sou o Kássio Bezerra – um <span className="text-accent underline underline-offset-4">desenvolvedor web</span> comprometido em construir aplicações intuitivas, focadas no usuário e com um design moderno e limpo.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <Button
@@ -39,9 +39,8 @@ export function Hero() {
                 <a href="#portfolio">VER MEUS PROJETOS</a>
               </Button>
               <Button
-                variant="outline"
                 asChild
-                className="border-border hover:border-accent hover:text-accent px-8 py-6 text-base bg-transparent"
+                className="border border-accent/80 bg-accent text-accent-foreground hover:bg-accent/80 hover:border-accent/90 hover:text-accent-foreground px-8 py-6 text-base"
               >
                 <a href="#contact">ENTRAR EM CONTATO</a>
               </Button>
@@ -55,7 +54,11 @@ export function Hero() {
               <div className="absolute -inset-4 bg-primary/20 rounded-full blur-3xl" />
               <div className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-2 border-primary/30">
                 <div className="w-full h-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center">
-                  <span className="text-8xl font-bold text-primary/40" style={{ fontFamily: 'var(--font-heading)' }}>KB</span>
+                  <img
+                    src="/eu.jpg"
+                    alt="Kássio"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
             </div>

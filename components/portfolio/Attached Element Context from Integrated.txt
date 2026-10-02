@@ -1,0 +1,74 @@
+Attached Element Context from Integrated Browser
+
+Element: div.absolute.inset-0.bg-[linear-gradient(rgba(100,100,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,200,0.03)_1px,transparent_1px)].bg-[size:60px_60px]
+
+URL: http://localhost:3001/
+
+HTML Path: main.min-h-screen.bg-background > section.relative.min-h-screen.flex.items-center.pt-16.overflow-hidden > div.absolute.inset-0.bg-[linear-gradient(rgba(100,100,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,200,0.03)_1px,transparent_1px)].bg-[size:60px_60px]
+
+Outer HTML:
+```html
+<div class="absolute inset-0 bg-[linear-gradient(rgba(100,100,200,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(100,100,200,0.03)_1px,transparent_1px)] bg-[size:60px_60px]"></div>
+```
+
+Dimensions:
+- top: 0px
+- left: 0px
+- width: 812px
+- height: 709px
+
+CSS:
+```css
+*, :after, :before, ::backdrop { box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0; }
+* { border-color: var(--border);
+    outline-color: var(--ring); }
+* { outline-color: color-mix(in oklab, var(--ring) 50%, transparent); }
+.absolute { position: absolute; }
+.inset-0 { inset: calc(var(--spacing) * 0); }
+.bg-\[linear-gradient\(rgba\(100\,100\,200\,0\.03\)_1px\,transparent_1px\)\,linear-gradient\(90deg\,rgba\(100\,100\,200\,0\.03\)_1px\,transparent_1px\)\] { background-image: linear-gradient(#6464c808 1px, #0000 1px), linear-gradient(90deg, #6464c808 1px, #0000 1px); }
+.bg-\[size\:60px_60px\] { background-size: 60px 60px; }
+
+/* Pseudo-elements */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: var(--border);
+  border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+::-webkit-scrollbar-track { background: var(--background); }
+
+/* Inherited */
+body { color: var(--foreground) }
+.font-sans { font-family: var(--font-inter), "Inter", system-ui, sans-serif }
+html, :host { tab-size: 4; line-height: 1.5; font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"); font-feature-settings: var(--default-font-feature-settings, normal) }
+
+/* Resolved values */
+margin: 0px;
+padding: 0px;
+border-radius: 0px;
+border: 0px solid lab(12.8457 -0.511453 -10.7977);
+background-image: linear-gradient(rgba(100, 100, 200, 0.03) 1px, rgba(0, 0, 0, 0) 1px), linear-gradient(90deg, rgba(100, 100, 200, 0.03) 1px, rgba(0, 0, 0, 0) 1px);
+background-size: 60px 60px, 60px 60px;
+box-sizing: border-box;
+color: lab(94.2 0 0);
+display: block;
+font-family: Inter, "Inter Fallback", Inter, system-ui, sans-serif;
+font-feature-settings: normal;
+height: 708.5px;
+line-height: 24px;
+outline-color: oklab(0.649994 -0.144886 -0.0388079 / 0.5);
+position: absolute;
+tab-size: 4;
+unicode-bidi: isolate /*UA*/;
+width: 812px;
+
+/* CSS variables */
+--border: lab(12.8457% -.511453 -10.7977);
+--spacing: .25rem;
+--background: lab(1.93922% -.0432804 -3.61724);
+--ring: lab(60.9754% -49.1396 -14.5884);
+--muted-foreground: lab(59.4% 0 0);
+--font-inter: "Inter", "Inter Fallback";
+--foreground: lab(94.2% 0 0);
+```

@@ -13,7 +13,7 @@ const skills = [
 
 export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-secondary/30">
+    <section id="skills" className="py-24 bg-secondary/30 scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-8" style={{ fontFamily: 'var(--font-heading)' }}>
           HABILIDADES
