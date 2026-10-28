@@ -9,7 +9,27 @@ const projects = [
     description: "Projeto de landing page e branding para uma plataforma de conteúdos, com foco em visual moderno, UX clara e comunicação forte.",
     tags: ["Next.js", "Design System", "Landing Page"],
     color: "from-primary/20 to-accent/10",
-    link: "https://menteaberta.vercel.app/"
+    link: "https://menteaberta.vercel.app/",
+    image: "/menteaberta.png",
+    imageAlt: "Imagem do projeto Mente Aberta, mostrando a interface da plataforma"
+  },
+  {
+    title: "Uzumadle",
+    description: "Jogo de adivinhar personagens de Naruto no estilo Wordle, com modo diário e infinito, pistas por cor e visual inspirado nos menus de Persona 3 Reload.",
+    tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
+    color: "from-primary/20 to-accent/10",
+    link: "https://uzumadle.vercel.app/",
+    image: "/uzumadle.jpg",
+    imageAlt: "Imagem do projeto Uzumadle, mostrando a tela inicial do jogo com o campo de palpite"
+  },
+  {
+    title: "Pawnthon Chess",
+    description: "Xadrez online multiplayer feito somente com Python: roda no navegador, no Windows, no Linux e no Android, com contas de usuário e partidas em tempo real.",
+    tags: ["Python", "Pygame", "WebSocket", "PostgreSQL"],
+    color: "from-primary/20 to-accent/10",
+    link: "https://pawnthon-chess.onrender.com/",
+    image: "/pawnthon.jpg",
+    imageAlt: "Imagem do projeto Pawnthon Chess, mostrando a tela de entrada do jogo"
   }
 ]
 
@@ -21,7 +41,7 @@ export function Portfolio() {
           PORTFÓLIO
         </h2>
 
-        <div className="grid gap-6 max-w-3xl mx-auto">
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {projects.map((project, index) => (
             <div
               key={project.title}
@@ -29,8 +49,8 @@ export function Portfolio() {
             >
               <div className="aspect-video bg-transparent flex items-center justify-center relative overflow-hidden">
                 <img
-                  src="/menteaberta.png"
-                  alt="Imagem do projeto Mente Aberta, mostrando a interface da plataforma"
+                  src={project.image}
+                  alt={project.imageAlt}
                   className="relative z-10 h-full w-full object-cover"
                   onError={(e) => {
                     const target = e.currentTarget as HTMLImageElement
@@ -40,7 +60,7 @@ export function Portfolio() {
                   }}
                 />
                 <div
-                  aria-label="Imagem do projeto Mente Aberta indisponível"
+                  aria-label={`Imagem do projeto ${project.title} indisponível`}
                   className="hidden relative z-10 h-full w-full items-center justify-center text-4xl font-bold text-muted-foreground"
                 >
                   ×
@@ -62,7 +82,7 @@ export function Portfolio() {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
                   {project.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
