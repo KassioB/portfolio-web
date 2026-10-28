@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect, useRef, useState } from "react"
 import { ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
@@ -15,7 +16,7 @@ const projects = [
   },
   {
     title: "Uzumadle",
-    description: "Jogo de adivinhar personagens de Naruto no estilo Wordle, com modo diário e infinito, pistas por cor e visual inspirado nos menus de Persona 3 Reload.",
+    description: "Jogo de adivinhar personagens de Naruto no estilo Wordle, com modo diário e infinito e pistas por cor.",
     tags: ["React", "TypeScript", "Vite", "Tailwind CSS"],
     color: "from-primary/20 to-accent/10",
     link: "https://uzumadle.vercel.app/",
@@ -32,6 +33,42 @@ const projects = [
     imageAlt: "Imagem do projeto Pawnthon Chess, mostrando a tela de entrada do jogo"
   }
 ]
+
+function ProjectDescription({ text }: { text: string }) {
+  const ref = useRef<HTMLParagraphElement>(null)
+  const [expanded, setExpanded] = useState(false)
+  const [truncated, setTruncated] = useState(false)
+
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const check = () => {
+      if (!expanded) setTruncated(el.scrollHeight > el.clientHeight + 1)
+    }
+    check()
+    const observer = new ResizeObserver(check)
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [expanded])
+
+  return (
+    <div className="mb-4">
+      <p ref={ref} className={`text-sm text-muted-foreground ${expanded ? "" : "line-clamp-3"}`}>
+        {text}
+      </p>
+      {(truncated || expanded) && (
+        <button
+          type="button"
+          onClick={() => setExpanded((v) => !v)}
+          className="mt-1 text-xs font-medium text-accent hover:underline"
+          aria-expanded={expanded}
+        >
+          {expanded ? "Ler menos" : "Ler mais"}
+        </button>
+      )}
+    </div>
+  )
+}
 
 export function Portfolio() {
   return (
@@ -82,9 +119,7 @@ export function Portfolio() {
                     <ExternalLink className="h-4 w-4" />
                   </a>
                 </div>
-                <p className="text-sm text-muted-foreground mb-4 line-clamp-3">
-                  {project.description}
-                </p>
+                <ProjectDescription text={project.description} />
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
                     <span
